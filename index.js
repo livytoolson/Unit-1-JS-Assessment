@@ -110,7 +110,13 @@ function getStarshipPassengerAndCrewSumTotal(character) {
  * Given film #7, expected error: `There are only 3 Star Wars movies. Flan fiction excluded.`
 */
 function getNthFilm(character, filmNumber) { 
-  return character.films[filmNumber];
+  for(let i = 1; i < 3; i++){
+    // return character.films[filmNumber].title;
+  } if (character.films.length <= 3){
+    return character.films[filmNumber].title;
+  } else if (character.films.length > 3){
+    return ('There are only 3 Star Wars moveies. Flan fiction excluded')
+  }
 }
 
 /**
