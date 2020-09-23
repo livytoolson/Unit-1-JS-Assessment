@@ -43,8 +43,8 @@ function getFilmCount(character) {
 function getSecondStarshipName(character) {
   if (character.starships[1].name.length > 1){
     return (character.starships[1].name);
-  } else if (character.starships[1].name.length === 0){
-    return 'none';
+  } else {
+    return 'none'
   }
 }
 
@@ -71,9 +71,11 @@ function getSummary(character) {
  * Sample data expected output: 8000
 */
 function getVehiclesCostInCreditsSumTotal(character) {
-  for(let i = 0; i < character.vehicles[i].length; i++){
-    return character.vehicles[i].cost_in_credits
+  let count = 0;
+  for(let i = 0; i < character.vehicles.length; i++){
+    count = count + character.vehicles[i].cost_in_credits;
   }
+  return count;
 }
 
 /**
@@ -87,9 +89,11 @@ function getVehiclesCostInCreditsSumTotal(character) {
  * Sample data expected output: 27
 */
 function getStarshipPassengerAndCrewSumTotal(character) {
+  let count = 0
   for(let i = 0; i < character.starships.length; i++){
-    return (character.starships[i].crew + character.starships[i].passengers);
+    count = count + (character.starships[i].crew + character.starships[i].passengers);
   }
+  return count;
 }
 
 /**
