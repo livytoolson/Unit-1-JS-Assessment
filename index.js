@@ -41,9 +41,9 @@ function getFilmCount(character) {
  * If length is 0. Return 'none'
 */
 function getSecondStarshipName(character) {
-  if (character.starships[1].name.length > 1){
+  if (character.starships.length > 1){
     return (character.starships[1].name);
-  } else {
+  } else if (character.starships.length === 0){
     return 'none'
   }
 }
@@ -109,8 +109,8 @@ function getStarshipPassengerAndCrewSumTotal(character) {
  * Given film #1, expected output: `A New Hope`
  * Given film #7, expected error: `There are only 3 Star Wars movies. Flan fiction excluded.`
 */
-function getNthFilm(character, filmNumber) {
-  // TODO: Add your code here.
+function getNthFilm(character, filmNumber) { 
+  return character.films[filmNumber];
 }
 
 /**
