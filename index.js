@@ -109,14 +109,16 @@ function getStarshipPassengerAndCrewSumTotal(character) {
  * Given film #1, expected output: `A New Hope`
  * Given film #7, expected error: `There are only 3 Star Wars movies. Flan fiction excluded.`
 */
-function getNthFilm(character, filmNumber) { 
-  for(let i = 1; i < 3; i++){
-    // return character.films[filmNumber].title;
-  } if (character.films.length <= 3){
-    return character.films[filmNumber].title;
-  } else if (character.films.length > 3){
-    return ('There are only 3 Star Wars moveies. Flan fiction excluded')
+
+function getNthFilm(character, filmNumber) {
+  for(let i = 0; i < character.films.length; i++){
+    if (filmNumber <= 3){
+      return character.films[filmNumber - 1];
+  } else if (filmNumber > 3){
+    return ('There are only 3 Star Wars movies. Flan fiction excluded.');
+    }
   }
+  return getNthFilm();
 }
 
 /**
